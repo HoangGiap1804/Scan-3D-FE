@@ -1,0 +1,150 @@
+@import 'tailwindcss';
+@config "../tailwind.config.js";
+
+/**
+ * BASE
+ */
+@layer base {
+
+  a,
+  img,
+  button {
+    @apply block;
+  }
+
+  input {
+    @apply block outline-none bg-transparent w-full;
+  }
+
+  input[type='password'] {
+    @apply tracking-[5px];
+  }
+
+  input[type='password']::placeholder {
+    @apply tracking-normal;
+  }
+
+  body {
+    @apply bg-light-background dark:bg-dark-background text-light-onBackground dark:text-dark-onBackground;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-2 h-2 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-transparent rounded-full;
+  }
+
+  *:hover::-webkit-scrollbar-thumb {
+    @apply bg-light-onBackground/15 dark:bg-dark-onBackground/15;
+  }
+}
+
+@theme {
+  --color-light-background: #f9fafb;
+  --color-light-onBackground: #111827;
+
+  --color-dark-background: #030712;
+  --color-dark-onBackground: #f9fafb;
+}
+
+@layer components {
+
+  /**
+  * Text field
+  */
+  .text-field-wrapper {
+    @apply relative;
+  }
+
+  .text-field {
+    @apply ring-1 ring-inset ring-light-outline dark:ring-dark-outline bg-inherit text-light-onSurface dark:text-dark-onSurface caret-light-primary dark:caret-dark-primary h-14 px-4 rounded-extraSmall transition-shadow duration-short3 ease-linear hover:ring-light-onSurface hover:dark:ring-dark-onSurface focus:ring-2 focus:ring-light-primary focus:dark:ring-dark-primary;
+  }
+
+  .text-field::placeholder {
+    @apply opacity-0 transition-opacity;
+  }
+
+  .text-field:focus::placeholder {
+    @apply opacity-100;
+  }
+
+  .label-text {
+    @apply absolute text-labelLarge top-[18px] left-2 text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant bg-light-background dark:bg-dark-background px-2 pointer-events-none origin-[0] transition-all duration-short4 ease-standard;
+  }
+
+  .text-field:focus~.label-text,
+  .text-field:not(:placeholder-shown)~.label-text {
+    @apply text-light-primary dark:text-dark-primary -translate-y-6 scale-75;
+  }
+
+  /**
+  * Button
+  */
+  .btn {
+    @apply h-10 px-6 rounded-full text-labelLarge flex items-center justify-center gap-2 relative overflow-hidden transition-all duration-short3 ease-standard;
+  }
+
+  .btn.filled {
+    @apply bg-light-primary dark:bg-dark-primary text-light-onPrimary dark:text-dark-onPrimary;
+  }
+
+  .btn.outline {
+    @apply border border-light-outline dark:border-dark-outline text-light-primary dark:text-dark-primary;
+  }
+
+  .btn.ghost {
+    @apply text-light-primary dark:text-dark-primary;
+  }
+
+  /* State layer */
+  .btn .state-layer {
+    @apply absolute inset-0 bg-light-onPrimary dark:bg-dark-onPrimary opacity-0 transition-opacity duration-short3 ease-standard pointer-events-none;
+  }
+
+  /* Variation specific state colors */
+  .btn.outline .state-layer,
+  .btn.ghost .state-layer {
+    @apply bg-light-primary dark:bg-dark-primary;
+  }
+
+  /* Interactive states */
+  .btn:hover .state-layer {
+    @apply opacity-8;
+  }
+
+  .btn:focus-visible .state-layer {
+    @apply opacity-12;
+  }
+
+  .btn:active .state-layer {
+    @apply opacity-12;
+  }
+
+  .btn:disabled {
+    @apply bg-light-onSurface/12 dark:bg-dark-onSurface/12 text-light-onSurface/38 dark:text-dark-onSurface/38 cursor-not-allowed pointer-events-none;
+  }
+
+  /**
+  * Link
+  */
+  .link {
+    @apply text-labelLarge font-semibold transition-colors duration-short3 ease-standard text-light-primary dark:text-dark-primary hover:underline;
+  }
+
+  /**
+  * Image
+  */
+  .img-box {
+    @apply bg-light-surfaceContainer dark:bg-dark-surfaceContainer overflow-hidden;
+  }
+
+  .img-cover {
+    @apply w-full h-full object-cover;
+  }
+
+  .img-box p {
+    @apply absolute bottom-10 left-10 right-10 z-10 text-displayLarge font-semibold leading-tight text-light-onSurface dark:text-dark-onSurface;
+  }
+}
