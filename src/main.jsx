@@ -10,7 +10,11 @@ import './index.css';
 keycloak.init({
   onLoad: "check-sso",
   pkceMethod: "S256",
-}).then(() => {
+}).then((authenticated) => {
+  if (authenticated) {
+    localStorage.setItem('token', keycloak.token);
+    localStorage.setItem('refreshToken', keycloak.refreshToken);
+  }
   createRoot(document.getElementById('root')).render(
     <StrictMode>
       <RouterProvider router={router} />

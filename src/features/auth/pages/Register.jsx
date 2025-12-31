@@ -1,12 +1,14 @@
-import { Link, Form } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PageTitle from '@/components/PageTitle';
-import TextField from '@/components/TextField';
 import Button from '@/components/Button';
+import keycloak from '../services/keycloak';
 
 import { banner, iconDark, iconLight } from '@/assets/assets';
 import Hero3D from '@/components/landing/Hero3D';
 
 const Register = () => {
+
+
   return (
     <>
       <PageTitle title='Create an account' />
@@ -49,40 +51,18 @@ const Register = () => {
                 Create an account
               </h2>
               <p className='text-bodyLarge text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant mt-1 mb-5 text-center px-2'>
-                Register todya and gain access to powerful tools that will
+                Register today and gain access to powerful tools that will
                 supercharge your ideas.
               </p>
-              <Form
-                method='POST'
-                className='grid grid-cols-1 gap-4'
-              >
-                <TextField
-                  type='text'
-                  name='name'
-                  label='Full name'
-                  placeholder='Full name'
-                  required={true}
-                  autoFocus={true}
-                />
 
-                <TextField
-                  type='email'
-                  name='email'
-                  label='Email'
-                  placeholder='Email'
-                  required={true}
-                />
-
-                <TextField
-                  type='password'
-                  name='password'
-                  label='Password'
-                  placeholder='Enter your Password'
-                  required={true}
-                />
-
-                <Button type='submit'>Create account</Button>
-              </Form>
+              <div className='grid grid-cols-1 gap-4'>
+                <p className="text-center text-gray-500 mb-4">
+                  You will be redirected to our secure identity provider to complete your registration.
+                </p>
+                <Button onClick={() => keycloak.register()}>
+                  Register with Keycloak
+                </Button>
+              </div>
             </div>
 
             <p className='text-bodyMedium text-light-onSurfaceVariant dark:text-dark-onSurfaceVariant text-center mt-4'>
@@ -105,7 +85,7 @@ const Register = () => {
             </p>
           </div>
         </div>
-      </div>
+      </div >
     </>
   );
 };
