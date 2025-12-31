@@ -24,7 +24,7 @@ useGLTF.preload('@/public/robot.glb');
 
 const Hero3D = () => {
     return (
-        <div className="w-full h-full absolute inset-0 -z-0">
+        <div className="w-full h-full absolute inset-0">
             <Canvas camera={{ position: [0, 2, 10], fov: 50 }}>
                 <ambientLight intensity={1} />
                 <spotLight position={[10, 15, 10]} angle={0.3} penumbra={1} intensity={2} castShadow />

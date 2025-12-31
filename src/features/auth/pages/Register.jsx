@@ -4,6 +4,7 @@ import TextField from '@/components/TextField';
 import Button from '@/components/Button';
 
 import { banner, iconDark, iconLight } from '@/assets/assets';
+import Hero3D from '@/components/landing/Hero3D';
 
 const Register = () => {
   return (
@@ -95,13 +96,14 @@ const Register = () => {
             </p>
           </div>
         </div>
-        <div className='hidden img-box lg:block lg:relative lg:rounded-large'>
-          <img
-            src={banner}
-            alt=''
-            className='img-cover'
-          />
-          <p className=''>Chat with chat box to supercharge your ideas</p>
+        <div className='hidden img-box lg:block lg:relative lg:rounded-large overflow-hidden bg-gray-900'>
+          <Hero3D />
+          <div className="absolute bottom-12 left-0 w-full text-center z-10 pointer-events-none px-6">
+            <p className='text-white text-3xl font-bold leading-tight drop-shadow-lg'>
+              Chat with Chat Box to <br />
+              <span className="text-blue-400">supercharge</span> your ideas
+            </p>
+          </div>
         </div>
       </div>
     </>

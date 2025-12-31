@@ -4,6 +4,8 @@ import Hero3D from './Hero3D';
 const Hero = () => {
     return (
         <section className='relative min-h-[800px] flex items-center overflow-hidden bg-gray-900'>
+
+
             {/* 3D Background */}
             <Hero3D />
 

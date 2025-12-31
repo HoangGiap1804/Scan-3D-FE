@@ -59,7 +59,7 @@
   }
 
   .text-field {
-    @apply ring-1 ring-inset ring-light-outline dark:ring-dark-outline bg-inherit text-light-onSurface dark:text-dark-onSurface caret-light-primary dark:caret-dark-primary h-14 px-4 rounded-extraSmall transition-shadow duration-short3 ease-linear hover:ring-light-onSurface hover:dark:ring-dark-onSurface focus:ring-2 focus:ring-light-primary focus:dark:ring-dark-primary;
+    @apply ring-1 ring-inset ring-light-outline dark:ring-dark-outline bg-inherit text-light-onSurface dark:text-dark-onSurface caret-blue-600 dark:caret-blue-400 h-14 px-4 rounded-extraSmall transition-shadow duration-short3 ease-linear hover:ring-light-onSurface hover:dark:ring-dark-onSurface focus:ring-2 focus:ring-blue-600 focus:dark:ring-blue-400;
   }
 
   .text-field::placeholder {
@@ -76,7 +76,7 @@
 
   .text-field:focus~.label-text,
   .text-field:not(:placeholder-shown)~.label-text {
-    @apply text-light-primary dark:text-dark-primary -translate-y-6 scale-75;
+    @apply text-blue-600 dark:text-blue-400 -translate-y-6 scale-75;
   }
 
   /**
@@ -87,26 +87,26 @@
   }
 
   .btn.filled {
-    @apply bg-light-primary dark:bg-dark-primary text-light-onPrimary dark:text-dark-onPrimary;
+    @apply bg-blue-600 dark:bg-blue-500 text-white;
   }
 
   .btn.outline {
-    @apply border border-light-outline dark:border-dark-outline text-light-primary dark:text-dark-primary;
+    @apply border border-light-outline dark:border-dark-outline text-blue-600 dark:text-blue-400;
   }
 
   .btn.ghost {
-    @apply text-light-primary dark:text-dark-primary;
+    @apply text-blue-600 dark:text-blue-400;
   }
 
   /* State layer */
   .btn .state-layer {
-    @apply absolute inset-0 bg-light-onPrimary dark:bg-dark-onPrimary opacity-0 transition-opacity duration-short3 ease-standard pointer-events-none;
+    @apply absolute inset-0 bg-blue-600 dark:bg-blue-400 opacity-0 transition-opacity duration-short3 ease-standard pointer-events-none;
   }
 
   /* Variation specific state colors */
   .btn.outline .state-layer,
   .btn.ghost .state-layer {
-    @apply bg-light-primary dark:bg-dark-primary;
+    @apply bg-blue-600 dark:bg-blue-400;
   }
 
   /* Interactive states */
@@ -130,7 +130,7 @@
   * Link
   */
   .link {
-    @apply text-labelLarge font-semibold transition-colors duration-short3 ease-standard text-light-primary dark:text-dark-primary hover:underline;
+    @apply text-labelLarge font-semibold transition-colors duration-short3 ease-standard text-blue-600 dark:text-blue-400 hover:underline;
   }
 
   /**
