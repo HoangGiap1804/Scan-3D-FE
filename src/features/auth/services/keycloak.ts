@@ -1,4 +1,4 @@
-// services/keycloak.js
+// services/keycloak.ts
 import Keycloak from "keycloak-js";
 
 const keycloak = new Keycloak({
