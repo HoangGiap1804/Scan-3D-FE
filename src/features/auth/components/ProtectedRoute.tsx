@@ -1,7 +1,11 @@
 import { Navigate, Outlet } from 'react-router-dom';
 import { isAuthenticated, hasRole } from '@/features/auth/utils/authUtils';
 
-const ProtectedRoute = ({ role }) => {
+interface ProtectedRouteProps {
+    role?: string;
+}
+
+const ProtectedRoute = ({ role }: ProtectedRouteProps) => {
     if (!isAuthenticated()) {
         return <Navigate to="/login" replace />;
     }

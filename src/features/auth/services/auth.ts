@@ -1,4 +1,4 @@
-export const login = async (email, password) => {
+export const login = async (email: string, password: string) => {
     try {
         const response = await fetch('http://localhost:8081/realms/test/protocol/openid-connect/token', {
             method: 'POST',
@@ -30,7 +30,7 @@ export const login = async (email, password) => {
     }
 };
 
-export const register = async (username, email, password) => {
+export const register = async (username: string, email: string, password: string) => {
     try {
         // WARNING: This is for development only.
         // In production, user registration should be handled by a backend service
